@@ -1,5 +1,21 @@
+:root {
+  --clr-primary:red;
+  --clr-bg:white;
+  --clr-body:black;
+}
+
 body {
-  color: red;
-  background-color: blue;
-  border: 1px solid red;
+  min-height: 100vh;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: va(--clr-body-bg);
+  background-color: var(--clr-bg);
+}
+
+.content {
+  width: 70%;
+  box-shadow: 2px 2px 2px 2px black;
+  width: max(500px, 70%);
 }

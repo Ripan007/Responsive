@@ -1,5 +1,84 @@
+// $color-1 :#ddfdfe;  // mobile
+// $color-2:#ffb8d1; // tablet
+// $color-3:#e7cee3; // laptop
+// $color-4:#e0e1e9; // desktop
+
+
+// $mobile:576px;
+// $tablet:768px;
+// $laptop:992px;
+// $desktop:1200px;
+
+// *{
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+// }
+
+// body{
+//   font-family: serif;
+//   font-size: 32px;
+// }
+
+// .container{
+//   height: 100vh;
+//   display: grid;
+//   place-content: center;
+//   background-color:$color-4;
+// }
+
+// #size{
+// position: absolute;
+// top:60%;
+// left: 50%;
+// transform:translateX(-50%);
+// }
+
+// /**
+// *?  max-width : inside the border
+// * ? min-width: outside the border
+// * ? apply media queries in descending order
+// **/
+
+// @media (min-width:$desktop){
+//   .container{
+//     background: $color-1;
+//   }
+// }
+
+
+// @media(max-width:$tablet){
+//   .container{
+//     background:$color-2;
+//   }
+// }
+
+// .container > .child{
+//   columns:200px;
+//   gap:10px;
+//   border: 1px solid red;
+// }
+
+:root{
+  --clr-primary:red;
+  --clr-bg:white;
+  --clr-body:black;
+}
+
 body{
-  color: red;
-  background-color: blue;
-  border: 1px solid red;
+  min-height: 100vh;
+  line-height: 1.6;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  color: va(--clr-body-bg);
+  background-color: var(--clr-bg)
+
+}
+
+.content{
+  width: 70%;
+  box-shadow: 2px 2px 2px 2px  black;
+// max-width:600px;
+width:max(500px,70%);
 }
