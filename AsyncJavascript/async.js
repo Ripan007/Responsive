@@ -70,24 +70,74 @@
 
 // callBack hell ///
 
-const getRollNo = () => {
+// const getRollNo = () => {
+//   setTimeout(() => {
+//     let roll__no = [1, 2, 3, 4, 5];
+//     console.log(roll__no);
+//     setTimeout(
+//       (rollNo) => {
+//         const bioData = {
+//           name: "rajiv",
+//           age: "23",
+//         };
+//         console.log(
+//           `hello ,i am ${bioData.name} i am ${bioData.age} years age  my rollNo is ${rollNo}`
+//         );
+//         setTimeout(() => {
+//           bioData.gender = "male";
+//           console.log(
+//             `my name is ${bioData.name} and my age is ${bioData.age} and my gender is ${bioData.gender}`
+//           );
+//         }, 3000);
+//       },
+//       3000,
+//       roll__no[2]
+//     );
+//   }, 3000);
+// };
+
+// getRollNo();
+
+// promises //
+// unmanagable code//
+// promises three stages
+// pending promise
+// resolve
+// reject
+
+const pObj1 = new Promise((resolve, reject) => {
   setTimeout(() => {
-    let roll__no = [1, 2, 3, 4, 5];
-    console.log(roll__no);
+    const roll__no = [1, 2, 3, 4];
+    resolve(roll__no);
+    reject(`getting error`);
+  }, 2000);
+});
+
+const profile = (indexNo) => {
+  return new Promise((resolve, reject) => {
     setTimeout(
-      (rollNo) => {
+      () => {
         const bioData = {
-          name: "rajiv",
-          age: "23",
+          name: "shakti",
+          age: 23,
         };
-        console.log(
-          `hello ,i am ${bioData.name} i am ${bioData.age} years age  my rollNo is ${rollNo}`
+        resolve(
+          `my name is ${bioData.name} and my age is ${bioData.age} and my rollNo is ${indexNo}`
         );
       },
-      3000,
-      roll__no[2]
+      200,
+      indexNo
     );
-  }, 3000);
+  });
 };
 
-getRollNo();
+pObj1
+  .then((result) => {
+    console.log(result);
+    profile(result[1]).then((data) => {
+      console.log(data);
+    });
+  })
+  .catch((error) => {
+    console.log(error);
+  });
